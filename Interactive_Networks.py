@@ -29,7 +29,7 @@ def get_path(layers, hemi, imp):
 # Main script entry point
 if __name__ == '__main__':
 
-    layers = [3]  # Define which layers to analyze: [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]
+    layers = [1]  # Define which layers to analyze: [1]=NT, [2]=SD, [3]=CD, [1,2], [1,3], [2,3], [1,2,3]
     hemis = ['L', 'R']  # Hemispheres: Left and Right
     imps = ['1', '2', '3', '4', '5', 'mean']  # Imputation strategies
     network_analyses = ["betweenness_centrality", "closeness_centrality", "degree_centrality", "clustering_coefficient"]
