@@ -186,6 +186,19 @@ if __name__ == '__main__':
                         else:
                             file_path_analyses_destination = os.path.join(output_dir_analyses, f"interactiveplot_{label}_{network_analysis}_{hemi}_{imp}.html")
 
+                        # Add an HTML legend to the visualizations 
+                        legend_html = f"""
+                        <div style="position: absolute; top: 10px; right: 10px; background: white; padding: 10px; border: 1px solid #ccc; font-family: Tahoma; font-size: 14px; z-index: 999;">
+                        <strong>Légende</strong><br>
+                        <span style="color:#00008d;">■</span> NT<br>
+                        <span style="color:#006300;">■</span> SD<br>
+                        <span style="color:#fb0000;">■</span> CD<br>
+                        """
+
+                        # Inject legend
+                        html_content += legend_html
+                        html_content_analyses += legend_html
+                        
                         # Write HTML files to disk
                         with open(file_path_destination, 'w', encoding='utf-8') as f:
                             f.write(html_content)
